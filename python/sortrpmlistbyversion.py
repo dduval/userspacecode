@@ -34,7 +34,7 @@ def main():
         lines = file.readlines()
         lines.sort(rpmvercmp)
         for line in lines:
-            print line
+            sys.stdout.write( line )
         file.close()
         sys.exit(0)
 
