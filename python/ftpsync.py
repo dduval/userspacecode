@@ -10,7 +10,7 @@ Example:
     ./ftpsync.py -s ftp.redhat.com -f /pub/redhat/linux/updates/enterprise/4AS/en/os/SRPMS/ -l /tmp/ -p kernel-utils*
 """
 
-# Copyright Dominic Duval <dduval@redhat.com> according to the terms
+# Copyright Dominic Duval <dd@dd.qc.ca> according to the terms
 # of the GNU Public License.
    
 import os
