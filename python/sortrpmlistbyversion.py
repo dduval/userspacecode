@@ -1,5 +1,7 @@
 #!/usr/bin/python
 
+#  Copyright Dominic Duval <dd@dd.qc.ca> according to the terms
+# of the GNU Public License.
 
 import rpm
 import sys
