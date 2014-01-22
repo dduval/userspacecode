@@ -1,5 +1,6 @@
 #! /usr/bin/env python
 
+
 """ Mirror a remote ftp dir into a local directory tree (files only)
 
 ftpsync.py -s <ftpsite> -f <ftpdir> -l <localdir> -p <pattern>
@@ -8,6 +9,9 @@ Example:
 
     ./ftpsync.py -s ftp.redhat.com -f /pub/redhat/linux/updates/enterprise/4AS/en/os/SRPMS/ -l /tmp/ -p kernel-utils*
 """
+
+# Copyright Dominic Duval <dduval@redhat.com> according to the terms
+# of the GNU Public License.
    
 import os
 import sys
