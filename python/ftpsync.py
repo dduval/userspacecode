@@ -66,11 +66,8 @@ def ftpsync(ftphost,remotedir,localdir,pattern):
         mode = words[0]
 
         # See if the file matches our pattern
-        skip = 0
         if verbose > 3: print "%s %s" % (filename, pattern)
         if not fnmatch(filename, pattern):
-            skip = 1
-        if skip:
             continue
         if verbose > 1: print 'Match for %s' % filename
         if mode[0] == 'd':
