@@ -1,5 +1,6 @@
 #! /usr/bin/env python
 
+
 """ Mirror a remote ftp dir into a local directory tree (files only)
 
 ftpsync.py -s <ftpsite> -f <ftpdir> -l <localdir> -p <pattern>
@@ -8,6 +9,9 @@ Example:
 
     ./ftpsync.py -s ftp.redhat.com -f /pub/redhat/linux/updates/enterprise/4AS/en/os/SRPMS/ -l /tmp/ -p kernel-utils*
 """
+
+# Copyright Dominic Duval <dd@dd.qc.ca> according to the terms
+# of the GNU Public License.
    
 import os
 import sys
@@ -62,11 +66,8 @@ def ftpsync(ftphost,remotedir,localdir,pattern):
         mode = words[0]
 
         # See if the file matches our pattern
-        skip = 0
         if verbose > 3: print "%s %s" % (filename, pattern)
         if not fnmatch(filename, pattern):
-            skip = 1
-        if skip:
             continue
         if verbose > 1: print 'Match for %s' % filename
         if mode[0] == 'd':
