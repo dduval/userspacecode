@@ -1,8 +1,8 @@
 #! /usr/bin/env python
 
-""" Sync YAML config file for distro configuration 
+""" Sync YAML config file for package list configuration 
 
-distroconfig.py <DIR>
+packageconfig.py <DIR>
 
 """
    
@@ -16,7 +16,7 @@ def usage():
     print __doc__
     sys.exit(2)
 
-# Dump directory entries to distros.yml
+# Dump package directory entries to packages.yml
 def dirtoyaml(dir):
 
     dirlist=[]
@@ -27,13 +27,14 @@ def dirtoyaml(dir):
         if os.path.isdir(dir + '/' + entry):
             dirlist.append(entry)
 
-    yamlfile=open('distros.yml', 'w')
+    if verbose > 1: print 'Directories found:' , dirlist
+    yamlfile=open(dir + '/packages.yml', 'w')
     yaml.dump(dirlist, yamlfile)
     return len(dirlist)     
 
-def loaddistros(dir):
+def loadpackages(dir):
     dirlist=[]
-    yamlfile=open(dir + '/distros.yml', 'r')
+    yamlfile=open(dir + '/packages.yml', 'r')
     dirlist= yaml.load(yamlfile)
     return dirlist
 
@@ -41,7 +42,7 @@ def loaddistros(dir):
 def main(args):
     if verbose > 1 : print "main arguments:" , args
     if args[0] == 'load':
-         print loaddistros(args[1])
+         print loadpackages(args[1])
     elif args[0] == 'dump':
         dirtoyaml(args[1])
 
